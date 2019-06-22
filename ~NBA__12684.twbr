@@ -1,0 +1,3018 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0515.1630                               -->
+<workbook source-build='2019.2.0 (20192.19.0515.1630)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Stadium (nba)' inline='true' name='federated.16w2n970hfl1hc18k9qnl1ibmwhn' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='msi' name='sqlserver.0b5w1cs0d8b5ku11pyjtr0t0lxt6'>
+            <connection authentication='sspi' class='sqlserver' dbname='nba' odbc-native-protocol='yes' one-time-sql='' server='msi' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Stadium].[TeamName]' />
+              <expression op='[STAT].[TeamName]' />
+            </expression>
+          </clause>
+          <relation connection='sqlserver.0b5w1cs0d8b5ku11pyjtr0t0lxt6' name='Stadium' table='[dbo].[Stadium]' type='table' />
+          <relation connection='sqlserver.0b5w1cs0d8b5ku11pyjtr0t0lxt6' name='STAT' table='[dbo].[STAT]' type='table' />
+        </relation>
+        <cols>
+          <map key='[AssistsPerGame]' value='[STAT].[AssistsPerGame]' />
+          <map key='[Average3PointFieldGoalsAttempted]' value='[STAT].[Average3PointFieldGoalsAttempted]' />
+          <map key='[Average3PointFieldGoalsMade]' value='[STAT].[Average3PointFieldGoalsMade]' />
+          <map key='[AverageFieldGoalsAttempted]' value='[STAT].[AverageFieldGoalsAttempted]' />
+          <map key='[AverageFieldGoalsMade]' value='[STAT].[AverageFieldGoalsMade]' />
+          <map key='[AverageFreeThrowsAttempted]' value='[STAT].[AverageFreeThrowsAttempted]' />
+          <map key='[AverageFreeThrowsMade]' value='[STAT].[AverageFreeThrowsMade]' />
+          <map key='[BlocksPerGame]' value='[STAT].[BlocksPerGame]' />
+          <map key='[Capacity]' value='[Stadium].[Capacity]' />
+          <map key='[City]' value='[Stadium].[City]' />
+          <map key='[DateAdded]' value='[STAT].[DateAdded]' />
+          <map key='[DateUpdated]' value='[STAT].[DateUpdated]' />
+          <map key='[DefensiveReboundsPerGame]' value='[STAT].[DefensiveReboundsPerGame]' />
+          <map key='[FieldGoalPercentage]' value='[STAT].[FieldGoalPercentage]' />
+          <map key='[FoulsPerGame]' value='[STAT].[FoulsPerGame]' />
+          <map key='[FreeThrowPercentage]' value='[STAT].[FreeThrowPercentage]' />
+          <map key='[GamesPlayed]' value='[STAT].[GamesPlayed]' />
+          <map key='[GamesStarted]' value='[STAT].[GamesStarted]' />
+          <map key='[Geolocation]' value='[Stadium].[Geolocation]' />
+          <map key='[ID (STAT)]' value='[STAT].[ID]' />
+          <map key='[ID]' value='[Stadium].[ID]' />
+          <map key='[MidseasonTrades]' value='[STAT].[MidseasonTrades]' />
+          <map key='[MinutesPerGame]' value='[STAT].[MinutesPerGame]' />
+          <map key='[Name]' value='[STAT].[Name]' />
+          <map key='[OffensiveReboundsPerGame]' value='[STAT].[OffensiveReboundsPerGame]' />
+          <map key='[PlayerEfficiencyRating]' value='[STAT].[PlayerEfficiencyRating]' />
+          <map key='[PointsPerGame]' value='[STAT].[PointsPerGame]' />
+          <map key='[ReboundsPerGame]' value='[STAT].[ReboundsPerGame]' />
+          <map key='[ScoringEfficiency]' value='[STAT].[ScoringEfficiency]' />
+          <map key='[ShootingEfficiency]' value='[STAT].[ShootingEfficiency]' />
+          <map key='[State]' value='[Stadium].[State]' />
+          <map key='[StealsPerGame]' value='[STAT].[StealsPerGame]' />
+          <map key='[TeamName (STAT)]' value='[STAT].[TeamName]' />
+          <map key='[TeamName]' value='[Stadium].[TeamName]' />
+          <map key='[TeamStadium]' value='[Stadium].[TeamStadium]' />
+          <map key='[ThreePointFieldGoalPercentage]' value='[STAT].[ThreePointFieldGoalPercentage]' />
+          <map key='[TurnOversPerGame]' value='[STAT].[TurnOversPerGame]' />
+          <map key='[TwoPointFieldGoalPercentage]' value='[STAT].[TwoPointFieldGoalPercentage]' />
+          <map key='[TwoPointFieldGoalsAttemptedPerGame]' value='[STAT].[TwoPointFieldGoalsAttemptedPerGame]' />
+          <map key='[TwoPointFieldGoalsMadePerGame]' value='[STAT].[TwoPointFieldGoalsMadePerGame]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TeamName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TeamName]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>TeamName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TeamStadium</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TeamStadium]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>TeamStadium</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geolocation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Geolocation]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>Geolocation</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Capacity</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Capacity]</local-name>
+            <parent-name>[Stadium]</parent-name>
+            <remote-alias>Capacity</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ID (STAT)]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TeamName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TeamName (STAT)]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>TeamName</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>150</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MidseasonTrades</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[MidseasonTrades]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>MidseasonTrades</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_BIT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GamesPlayed</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[GamesPlayed]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>GamesPlayed</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GamesStarted</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[GamesStarted]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>GamesStarted</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MinutesPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MinutesPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>MinutesPerGame</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PointsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PointsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>PointsPerGame</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OffensiveReboundsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[OffensiveReboundsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>OffensiveReboundsPerGame</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DefensiveReboundsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DefensiveReboundsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>DefensiveReboundsPerGame</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ReboundsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ReboundsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>ReboundsPerGame</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AssistsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AssistsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>AssistsPerGame</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StealsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[StealsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>StealsPerGame</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BlocksPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[BlocksPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>BlocksPerGame</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TurnOversPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TurnOversPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>TurnOversPerGame</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FoulsPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FoulsPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>FoulsPerGame</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PlayerEfficiencyRating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PlayerEfficiencyRating]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>PlayerEfficiencyRating</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AverageFieldGoalsMade</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AverageFieldGoalsMade]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>AverageFieldGoalsMade</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AverageFieldGoalsAttempted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AverageFieldGoalsAttempted]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>AverageFieldGoalsAttempted</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FieldGoalPercentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FieldGoalPercentage]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>FieldGoalPercentage</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Average3PointFieldGoalsMade</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Average3PointFieldGoalsMade]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>Average3PointFieldGoalsMade</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Average3PointFieldGoalsAttempted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Average3PointFieldGoalsAttempted]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>Average3PointFieldGoalsAttempted</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ThreePointFieldGoalPercentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ThreePointFieldGoalPercentage]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>ThreePointFieldGoalPercentage</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AverageFreeThrowsMade</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AverageFreeThrowsMade]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>AverageFreeThrowsMade</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AverageFreeThrowsAttempted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AverageFreeThrowsAttempted]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>AverageFreeThrowsAttempted</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FreeThrowPercentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FreeThrowPercentage]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>FreeThrowPercentage</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TwoPointFieldGoalsMadePerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TwoPointFieldGoalsMadePerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>TwoPointFieldGoalsMadePerGame</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TwoPointFieldGoalsAttemptedPerGame</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TwoPointFieldGoalsAttemptedPerGame]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>TwoPointFieldGoalsAttemptedPerGame</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TwoPointFieldGoalPercentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TwoPointFieldGoalPercentage]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>TwoPointFieldGoalPercentage</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ScoringEfficiency</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ScoringEfficiency]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>ScoringEfficiency</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ShootingEfficiency</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ShootingEfficiency]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>ShootingEfficiency</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateAdded</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateAdded]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>DateAdded</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateUpdated</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateUpdated]</local-name>
+            <parent-name>[STAT]</parent-name>
+            <remote-alias>DateUpdated</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Assists Per Game' datatype='real' name='[AssistsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Average Field Goals Attempted' datatype='real' name='[AverageFieldGoalsAttempted]' role='dimension' type='ordinal' />
+      <column caption='Average Field Goals Made' datatype='real' name='[AverageFieldGoalsMade]' role='dimension' type='ordinal' />
+      <column caption='Average Free Throws Attempted' datatype='real' name='[AverageFreeThrowsAttempted]' role='dimension' type='ordinal' />
+      <column caption='Average Free Throws Made' datatype='real' name='[AverageFreeThrowsMade]' role='dimension' type='ordinal' />
+      <column caption='Blocks Per Game' datatype='real' name='[BlocksPerGame]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Date Added' datatype='datetime' name='[DateAdded]' role='dimension' type='ordinal' />
+      <column caption='Date Updated' datatype='datetime' name='[DateUpdated]' role='dimension' type='ordinal' />
+      <column caption='Defensive Rebounds Per Game' datatype='real' name='[DefensiveReboundsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Field Goal Percentage' datatype='real' name='[FieldGoalPercentage]' role='dimension' type='ordinal' />
+      <column caption='Fouls Per Game' datatype='real' name='[FoulsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Free Throw Percentage' datatype='real' name='[FreeThrowPercentage]' role='dimension' type='ordinal' />
+      <column caption='Games Played' datatype='integer' name='[GamesPlayed]' role='dimension' type='ordinal' />
+      <column caption='Games Started' datatype='integer' name='[GamesStarted]' role='dimension' type='ordinal' />
+      <column caption='Id (Stat)' datatype='integer' name='[ID (STAT)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Midseason Trades' datatype='boolean' name='[MidseasonTrades]' role='dimension' type='nominal' />
+      <column caption='Minutes Per Game' datatype='real' name='[MinutesPerGame]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Offensive Rebounds Per Game' datatype='real' name='[OffensiveReboundsPerGame]' role='dimension' type='ordinal' />
+      <column aggregation='CountD' caption='Player Efficiency Rating' datatype='real' name='[PlayerEfficiencyRating]' role='dimension' type='ordinal' />
+      <column aggregation='CountD' datatype='real' name='[PointsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Rebounds Per Game' datatype='real' name='[ReboundsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Scoring Efficiency' datatype='real' name='[ScoringEfficiency]' role='dimension' type='ordinal' />
+      <column caption='Shooting Efficiency' datatype='real' name='[ShootingEfficiency]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Steals Per Game' datatype='real' name='[StealsPerGame]' role='dimension' type='ordinal' />
+      <column caption='Team Name' datatype='string' name='[TeamName]' role='dimension' type='nominal' />
+      <column caption='Team Stadium' datatype='string' name='[TeamStadium]' role='dimension' type='nominal' />
+      <column caption='Three Point Field Goal Percentage' datatype='real' name='[ThreePointFieldGoalPercentage]' role='dimension' type='ordinal' />
+      <column caption='Turn Overs Per Game' datatype='real' name='[TurnOversPerGame]' role='dimension' type='ordinal' />
+      <column caption='Two Point Field Goal Percentage' datatype='real' name='[TwoPointFieldGoalPercentage]' role='dimension' type='ordinal' />
+      <column caption='Two Point Field Goals Attempted Per Game' datatype='real' name='[TwoPointFieldGoalsAttemptedPerGame]' role='dimension' type='ordinal' />
+      <column caption='Two Point Field Goals Made Per Game' datatype='real' name='[TwoPointFieldGoalsMadePerGame]' role='dimension' type='ordinal' />
+      <column-instance column='[ID (STAT)]' derivation='None' name='[none:ID (STAT):ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[PointsPerGame]' derivation='None' name='[none:PointsPerGame:ok]' pivot='key' type='ordinal' />
+      <drill-paths>
+        <drill-path name='State, City'>
+          <field>[State]</field>
+          <field>[City]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.410714' measure-ordering='alphabetic' measure-percentage='0.589286' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:PointsPerGame:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>5.0999999999999996</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>27.399999999999999</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>25.899999999999999</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Name:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Alex Poythress SF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Ben Simmons PG&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Caleb Swanigan PF *&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cristiano Felicio PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Deandre Ayton C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Deyonta Davis C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Ed Davis PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Gary Clark PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Ian Mahinmi C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jalen Jones F&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jayson Tatum SF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;John Jenkins SG *&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Juan Hernangomez PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Kevin Love PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Lauri Markkanen PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Marvin Williams PF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Myles Turner C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Quincy Acy F&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Royce O&amp;\#x27;Neale SF&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Stephen Curry PG&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Tobias Harris SF *&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Tyson Chandler C *&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Zhaire Smith SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Aaron Gordon PF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Anthony Davis PF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Brandon Knight PG *&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;CJ McCollum SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Dario Saric PF *&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Derrick Jones Jr. SF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Duncan Robinson SF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Evan Fournier SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Grayson Allen SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jabari Parker PF *&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jaron Blossomgame SF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;JJ Redick SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jordan Sibert SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Kemba Walker PG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Kyle Kuzma PF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Marco Belinelli SG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Mike Muscala PF *&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Omri Casspi F&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Robert Covington SF *&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Shabazz Napier PG&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Thabo Sefolosha SF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Troy Brown Jr. SF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Willie Cauley-Stein C&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Al-Farouq Aminu PF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Austin Rivers PG *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Bruno Caboclo SF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Collin Sexton PG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;David Nwaba SG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Devin Harris PG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Dwight Powell PF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Frank Mason III PG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Harry Giles III PF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;JaKarr Sampson SF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;JaVale McGee C&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Joe Ingles SF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Josh Okogie SG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kentavious Caldwell-Pope SG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Lance Stephenson SG&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Markieff Morris PF *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mitchell Creek SF *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Patrick McCaw SG *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Rodney Hood SG *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Skal Labissiere PF *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Thon Maker PF *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Tyler Johnson SG *&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Yuta Watanabe G&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Andre Drummond C&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Blake Griffin PF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Cedi Osman SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Dairis Bertans SG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DeMar DeRozan SG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DJ Stephens G&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Elie Okobo PG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;George King SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Isaiah Canaan G *&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;James Harden PG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jerami Grant SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jonah Bolden PF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Justin Holiday SF *&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Khyri Thomas SG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Luka Doncic SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Maxi Kleber PF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Nicolas Batum SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Raul Neto PG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Ryan Anderson PF *&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;T.J. Leaf PF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Torrey Craig SF&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Walt Lemon Jr. PG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Alfonzo McKinnie SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Billy Garrett Jr. G&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Cameron Payne G *&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;D.J. Augustin PG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DeAndre Jordan C *&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Dillon Brooks SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Edmond Sumner PG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Gary Harris SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Iman Shumpert SG *&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jamal Crawford SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jeff Green SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;John Wall PG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Julian Washburn SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Kevon Looney C&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;LeBron James SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Mason Plumlee PF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Nemanja Bjelica PF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Quincy Pondexter SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Rudy Gay SF&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sterling Brown SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Tomas Satoransky SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Tyus Jones PG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Alec Burks SG *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Avery Bradley SG *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Bryn Forbes SG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Corey Brewer SG *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Davis Bertans SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Devin Robinson SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Dwyane Wade SG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Frank Ntilikina PG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Hassan Whiteside C&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jake Layman SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jawun Evans PG *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Joel Embiid C&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Josh Richardson SG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Kevin Durant SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Lance Thomas SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Marquese Chriss PF *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Mitchell Robinson C&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Patty Mills PG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Rodney McGruder SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Solomon Hill SF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Tim Frazier PG *&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Tyler Ulis G&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Zach Collins PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Anfernee Simons SG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Bradley Beal SG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Chris Paul PG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Dante Cunningham SF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Deonte Burton G&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Dragan Bender PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Eric Moreland PF *&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Gordon Hayward SF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;J.J. Barea PG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jarell Martin PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jimmer Fredette PG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jordan Clarkson PG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Kelly Olynyk PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Kyle Anderson SF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Malik Monk SG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Mikal Bridges SF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Okaro White F&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Richaun Holmes PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Semi Ojeleye PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Terrence Ross SG&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Trey Lyles PF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Wesley Matthews SG *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Aaron Holiday PG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Anthony Tolliver PF&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Brandon Sampson SG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;CJ Miles SF *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Darius Miller SF&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Derrick Rose PG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Dusty Hannahs G&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Evan Turner SG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Greg Monroe C *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jacob Evans SG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jarred Vanderbilt PF&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Joakim Noah C&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jose Calderon PG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Kenneth Faried PF *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Kyle O&amp;\#x27;Quinn C&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Marcus Morris PF&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mike Scott PF *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Otto Porter Jr. SF *&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Robert Williams III C&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Shaquille Harrison PG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Thaddeus Young PF&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Troy Daniels SG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Willy Hernangomez C&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Andrew Harrison G *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Bojan Bogdanovic SF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Chasson Randle PG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Daniel Hamilton G&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dennis Schroder PG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dorian Finney-Smith SF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Eric Bledsoe PG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Glenn Robinson III SG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ivan Rabb PF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jared Dudley SF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jerryd Bayless PG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jonathon Simmons SF *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Karl-Anthony Towns C&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Kostas Antetokounmpo PF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Malcolm Brogdon PG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Michael Carter-Williams PG *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Nikola Vucevic C&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Reggie Bullock SG *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sam Dekker SF *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Taurean Prince SF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Trevor Ariza SF *&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Wes Iwundu SF&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Alex Caruso SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Bam Adebayo C&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Buddy Hield SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Cory Joseph PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;De&amp;\#x27;Aaron Fox PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Devonte&amp;\#x27; Graham PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dzanan Musa SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Furkan Korkmaz SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Henry Ellenson PF *&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jakob Poeltl C&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jaylen Adams PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;John Collins PF&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;JR Smith SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Kevin Huerter SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Langston Galloway SG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;MarShon Brooks G&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Monte Morris PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Paul George SF&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Ron Baker G *&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Spencer Dinwiddie PG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Tim Hardaway Jr. SG *&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Tyler Zeller C *&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Zach LaVine PG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Andre Iguodala SF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Boban Marjanovic C *&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chandler Hutchison SF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Damian Jones C&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;DeMarcus Cousins C&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Domantas Sabonis PF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Emanuel Terry F *&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Georges Niang SF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Isaiah Hartenstein PF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;James Johnson PF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jeremy Lamb SG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jonas Jerebko PF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Justin Jackson SF *&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Klay Thompson SG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Luke Kennard SG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Melvin Frazier Jr. SG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Nik Stauskas SG *&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Rawle Alkins SG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Ryan Arcidiacono PG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;T.J. McConnell PG&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Total&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Wayne Ellington SG *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Andre Ingram SG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Bobby Portis PF *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Chandler Parsons SF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Damian Lillard PG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;DeMarre Carroll SF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Donatas Motiejunas PF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Emmanuel Mudiay PG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Gerald Green SG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Isaiah Hicks PF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;James Nunnally G *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jeremy Lin PG *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jonas Valanciunas C *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Justise Winslow SF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Kobi Simmons G&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Luke Kornet PF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Meyers Leonard PF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Nikola Jokic C&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ray Spalding PF *&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ryan Broekhoff SG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;T.J. Warren SF&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Trae Young PG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Wayne Selden SG *&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Andrew Wiggins SF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Brad Wanamaker PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Cheick Diallo PF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Daniel Theis PF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Dennis Smith Jr. PG *&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Doug McDermott SF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Eric Gordon SG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Goran Dragic PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Ivica Zubac C *&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jared Terrell SG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jevon Carter PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jordan Bell PF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Keita Bates-Diop SF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Kris Dunn PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Malik Beasley SG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Michael Kidd-Gilchrist SF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Noah Vonleh PF&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Reggie Jackson PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Scott Machado PG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Terrance Ferguson SG&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Trey Burke PG *&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Wesley Johnson SF *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Ante Zizic C&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Brandon Ingram SF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Christian Wood PF *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Danuel House Jr. SF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Derrick Favors PF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Draymond Green PF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Ersan Ilyasova PF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Gorgui Dieng C&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;J.P. Macura SG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jaren Jackson Jr. PF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jimmy Butler SG *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jordan McRae SG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Kelly Oubre Jr. SF *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Kyle Korver SG *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Marc Gasol C *&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Mike Conley PG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Omari Spellman PF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Ricky Rubio PG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Seth Curry SG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Terry Rozier PG&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Tristan Thompson C&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Will Barton SG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Allonzo Trier SG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bismack Biyombo C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Cameron Reynolds G&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;D.J. Wilson PF&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;DeAndre&amp;\#x27; Bembry SF&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dion Waiters SG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Ekpe Udoh C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Gary Payton II G&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Isaac Bonga PG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jamal Murray PG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jeff Teague PG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Johnathan Williams PF&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Julius Randle C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Khem Birch C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Lonnie Walker IV SG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Matthew Dellavedova PG *&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Nene Hilario C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Quinn Cook PG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Rudy Gobert C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Steven Adams C&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Tony Parker PG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Udonis Haslem PF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Alex Len C&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ben McLemore G&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;C.J. Williams SG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Courtney Lee SG *&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;De&amp;\#x27;Anthony Melton PG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dewayne Dedmon C&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;E&amp;\#x27;Twaun Moore SG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Garrett Temple SG *&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ian Clark SG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jalen Brunson PG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jaylen Brown SG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;John Holland G&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jrue Holiday PG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Kevin Knox SF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Larry Nance Jr. PF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Marvin Bagley III PF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Moritz Wagner C&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Paul Millsap PF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Rondae Hollis-Jefferson SF&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Stanley Johnson SF *&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Timothe Luwawu-Cabarrot SG *&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Tyreke Evans G&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Zaza Pachulia C&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Abdel Nader SF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Antonio Blakeney SG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Brook Lopez C&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Clint Capela C&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Darren Collison PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Derrick White PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Dwayne Bacon SG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Frank Jackson PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Guerschon Yabusele PF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jae Crowder PF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jarrett Allen C&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Joe Chealey PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Josh Hart SG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Kenrich Williams SG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Kyrie Irving PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Marcus Smart PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Miles Bridges SF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;P.J. Tucker SF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Robin Lopez C&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Shaun Livingston PG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Theo Pinson SG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Troy Williams SF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Yante Maten PF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Andrew Bogut C&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Bogdan Bogdanovic SG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Channing Frye PF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Damyean Dotson SG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Deng Adel SF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Donovan Mitchell SG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Enes Kanter C *&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Giannis Antetokounmpo PF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Ish Smith PG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;JaMychal Green PF *&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jerian Grant PG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jonathan Isaac PF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Kadeem Allen SG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Kosta Koufos C&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Luol Deng SF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Michael Beasley F&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Nikola Mirotic PF *&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Raymond Felton PG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Salah Mejri C&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Taj Gibson PF&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Treveon Graham SG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Wendell Carter Jr. C&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Amir Johnson C&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;BJ Johnson SF *&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Caris LeVert SG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;D&amp;\#x27;Angelo Russell PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Delon Wright PG *&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Dirk Nowitzki PF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Elfrid Payton PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;George Hill PG *&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Isaac Humphries C&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;James Ennis III SF *&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jemerrio Jones F&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jon Leuer PF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Justin Anderson SG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Khris Middleton SF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Lonzo Ball PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Maurice Harkless SF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Nerlens Noel PF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Rajon Rondo PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Russell Westbrook PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Sviatoslav Mykhailiuk SG *&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Tony Snell SG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Vince Carter SF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Al Horford C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Aron Baynes C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Bruce Brown SG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Cody Zeller C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Daryl Macon SG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Devin Booker SG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Dwight Howard C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Frank Kaminsky PF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Harrison Barnes SF *&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jahlil Okafor C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jason Smith PF *&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Joe Harris SF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Josh Jackson SF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Kent Bazemore SG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;LaMarcus Aldridge C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Mario Hezonja SF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Miles Plumlee C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Pat Connaughton SG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Rodions Kurucs SF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Shelvin Mack PG *&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Thomas Bryant C&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Tyler Dorsey SG *&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Yogi Ferrell PG&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:ID (STAT):ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>173</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>231</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>174</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>54</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>424</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>527</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>383</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>449</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>189</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>338</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Sheet 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='SUM(Capacity)' />
+        <param name='target' value='Sheet 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stadium (nba)' name='federated.16w2n970hfl1hc18k9qnl1ibmwhn' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.16w2n970hfl1hc18k9qnl1ibmwhn'>
+            <column datatype='integer' name='[Capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Team Name' datatype='string' name='[TeamName]' role='dimension' type='nominal' />
+            <column caption='Team Stadium' datatype='string' name='[TeamStadium]' role='dimension' type='nominal' />
+            <column-instance column='[City]' derivation='None' name='[none:City:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TeamName]' derivation='None' name='[none:TeamName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TeamStadium]' derivation='None' name='[none:TeamStadium:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Capacity]' derivation='Sum' name='[sum:Capacity:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:Capacity:ok]' field-type='ordinal' max-size='1' min-size='0.502755' type='catsize' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:TeamStadium:nk]' />
+              <size column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:Capacity:ok]' />
+              <lod column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:State:nk]' />
+              <lod column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:City:nk]' />
+              <lod column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:TeamName:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.8148159980773926' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[Latitude (generated)]</rows>
+        <cols>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{EB2901FE-AEDC-4521-94E9-9208919AD060}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stadium (nba)' name='federated.16w2n970hfl1hc18k9qnl1ibmwhn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16w2n970hfl1hc18k9qnl1ibmwhn'>
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='real' name='[PointsPerGame]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[TeamName (STAT)]' role='dimension' type='nominal' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PointsPerGame]' derivation='None' name='[none:PointsPerGame:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TeamName (STAT)]' derivation='None' name='[none:TeamName (STAT):nk]' pivot='key' type='nominal' />
+            <column-instance column='[PointsPerGame]' derivation='Sum' name='[sum:PointsPerGame:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Aaron Gordon PF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Aaron Holiday PG&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Abdel Nader SF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Al Horford C&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Al-Farouq Aminu PF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alec Burks SG *&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Caruso SG&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Len C&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Poythress SF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alfonzo McKinnie SF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Allonzo Trier SG&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Anthony Davis PF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bam Adebayo C&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brad Wanamaker PG&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Corey Brewer SG *&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Danny Green SG&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;LeBron James SF&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:PointsPerGame:ok]' direction='ASC'>
+            <dictionary>
+              <bucket>%all%</bucket>
+              <bucket>14.300000000000001</bucket>
+              <bucket>17.699999999999999</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' />
+              <size column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:PointsPerGame:qk]' />
+              <text column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:PointsPerGame:ok]' />
+              <text column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' />
+              <text column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:TeamName (STAT):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{3C135087-0E9E-419A-A70F-EBC0E8ECC202}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stadium (nba)' name='federated.16w2n970hfl1hc18k9qnl1ibmwhn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16w2n970hfl1hc18k9qnl1ibmwhn'>
+            <column datatype='real' name='[Average3PointFieldGoalsAttempted]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Average3PointFieldGoalsAttempted]' derivation='Sum' name='[sum:Average3PointFieldGoalsAttempted:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;Anthony Davis PF&quot;' />
+              <groupfilter function='member' level='[none:Name:nk]' member='&quot;LeBron James SF&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]</rows>
+        <cols>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:Average3PointFieldGoalsAttempted:qk]</cols>
+      </table>
+      <simple-id uuid='{5BE7334E-9723-4AD3-BB21-0838CEAE64C7}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stadium (nba)' name='federated.16w2n970hfl1hc18k9qnl1ibmwhn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16w2n970hfl1hc18k9qnl1ibmwhn'>
+            <column caption='Id (Stat)' datatype='integer' name='[ID (STAT)]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='real' name='[PointsPerGame]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[TeamName (STAT)]' role='dimension' type='nominal' />
+            <column-instance column='[ID (STAT)]' derivation='None' name='[none:ID (STAT):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TeamName (STAT)]' derivation='None' name='[none:TeamName (STAT):nk]' pivot='key' type='nominal' />
+            <column-instance column='[PointsPerGame]' derivation='Sum' name='[sum:PointsPerGame:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([PointsPerGame])' function='order' user:ui-marker='order'>
+                <groupfilter from='1' function='range' level='[none:ID (STAT):ok]' to='551' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]' direction='DESC' using='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:PointsPerGame:qk]' />
+          <filter class='categorical' column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]'>
+            <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([PointsPerGame])' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Aaron Gordon PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Aaron Holiday PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Abdel Nader SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Al Horford C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Al-Farouq Aminu PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alec Burks SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Caruso SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Len C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alex Poythress SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Alfonzo McKinnie SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Allonzo Trier SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Amir Johnson C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andre Drummond C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andre Iguodala SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andre Ingram SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andrew Bogut C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andrew Harrison G *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Andrew Wiggins SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Anfernee Simons SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ante Zizic C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Anthony Davis PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Anthony Tolliver PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Antonio Blakeney SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Aron Baynes C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Austin Rivers PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Avery Bradley SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bam Adebayo C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ben McLemore G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ben Simmons PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Billy Garrett Jr. G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bismack Biyombo C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;BJ Johnson SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Blake Griffin PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Boban Marjanovic C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bobby Portis PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bogdan Bogdanovic SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bojan Bogdanovic SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brad Wanamaker PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bradley Beal SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brandon Ingram SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brandon Knight PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brandon Sampson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Brook Lopez C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bruce Brown SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bruno Caboclo SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Bryn Forbes SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Buddy Hield SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;C.J. Williams SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Caleb Swanigan PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cameron Payne G *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cameron Reynolds G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Caris LeVert SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cedi Osman SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Chandler Hutchison SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Chandler Parsons SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Channing Frye PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Chasson Randle PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cheick Diallo PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Chris Boucher PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Chris Paul PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Christian Wood PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;CJ McCollum SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;CJ Miles SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Clint Capela C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cody Zeller C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Collin Sexton PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Corey Brewer SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cory Joseph PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Courtney Lee SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Cristiano Felicio PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;D.J. Augustin PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;D.J. Wilson PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;D&amp;\#x27;Angelo Russell PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dairis Bertans SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Damian Jones C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Damian Lillard PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Damyean Dotson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Daniel Hamilton G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Daniel Theis PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Danilo Gallinari SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Danny Green SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dante Cunningham SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Danuel House Jr. SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dario Saric PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Darius Miller SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Darren Collison PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Daryl Macon SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;David Nwaba SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Davis Bertans SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;De&amp;\#x27;Aaron Fox PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;De&amp;\#x27;Anthony Melton PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Deandre Ayton C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DeAndre Jordan C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DeAndre&amp;\#x27; Bembry SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Delon Wright PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DeMar DeRozan SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DeMarcus Cousins C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DeMarre Carroll SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Deng Adel SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dennis Schroder PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dennis Smith Jr. PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Deonte Burton G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Derrick Favors PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Derrick Jones Jr. SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Derrick Rose PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Derrick White PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Devin Booker SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Devin Harris PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Devin Robinson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Devonte&amp;\#x27; Graham PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dewayne Dedmon C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Deyonta Davis C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dillon Brooks SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dion Waiters SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dirk Nowitzki PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;DJ Stephens G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Domantas Sabonis PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Donatas Motiejunas PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Donovan Mitchell SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dorian Finney-Smith SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Doug McDermott SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dragan Bender PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Draymond Green PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Duncan Robinson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dusty Hannahs G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dwayne Bacon SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dwight Howard C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dwight Powell PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dwyane Wade SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Dzanan Musa SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;E&amp;\#x27;Twaun Moore SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ed Davis PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Edmond Sumner PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ekpe Udoh C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Elfrid Payton PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Elie Okobo PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Emanuel Terry F *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Emmanuel Mudiay PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Enes Kanter C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Eric Bledsoe PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Eric Gordon SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Eric Moreland PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ersan Ilyasova PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Evan Fournier SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Evan Turner SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Frank Jackson PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Frank Kaminsky PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Frank Mason III PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Frank Ntilikina PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Fred VanVleet PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Furkan Korkmaz SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Garrett Temple SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gary Clark PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gary Harris SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gary Payton II G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;George Hill PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;George King SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Georges Niang SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gerald Green SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Giannis Antetokounmpo PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Glenn Robinson III SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Goran Dragic PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gordon Hayward SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Gorgui Dieng C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Grayson Allen SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Greg Monroe C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Guerschon Yabusele PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Harrison Barnes SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Harry Giles III PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Hassan Whiteside C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Henry Ellenson PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ian Clark SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ian Mahinmi C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Iman Shumpert SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Isaac Bonga PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Isaac Humphries C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Isaiah Canaan G *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Isaiah Hartenstein PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Isaiah Hicks PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ish Smith PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ivan Rabb PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ivica Zubac C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;J.J. Barea PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;J.P. Macura SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jabari Parker PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jacob Evans SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jae Crowder PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jahlil Okafor C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;JaKarr Sampson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jake Layman SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jakob Poeltl C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jalen Brunson PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jalen Jones F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jamal Crawford SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jamal Murray PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;James Ennis III SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;James Harden PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;James Johnson PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;James Nunnally G *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;JaMychal Green PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jared Dudley SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jared Terrell SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jarell Martin PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jaren Jackson Jr. PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jaron Blossomgame SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jarred Vanderbilt PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jarrett Allen C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jason Smith PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;JaVale McGee C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jawun Evans PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jaylen Adams PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jaylen Brown SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jayson Tatum SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jeff Green SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jeff Teague PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jemerrio Jones F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jerami Grant SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jeremy Lamb SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jeremy Lin PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jerian Grant PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jerome Robinson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jerryd Bayless PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jevon Carter PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jimmer Fredette PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jimmy Butler SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;JJ Redick SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Joakim Noah C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jodie Meeks SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Joe Chealey PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Joe Harris SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Joe Ingles SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Joel Embiid C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;John Collins PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;John Holland G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;John Jenkins SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;John Wall PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Johnathan Williams PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jon Leuer PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jonah Bolden PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jonas Jerebko PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jonas Valanciunas C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jonathan Isaac PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jonathon Simmons SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jordan Bell PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jordan Clarkson PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jordan McRae SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jordan Sibert SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jose Calderon PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Josh Hart SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Josh Jackson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Josh Okogie SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Josh Richardson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;JR Smith SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Jrue Holiday PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Juan Hernangomez PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Julian Washburn SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Julius Randle C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Justin Anderson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Justin Holiday SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Justin Jackson SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Justise Winslow SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kadeem Allen SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Karl-Anthony Towns C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kawhi Leonard SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Keita Bates-Diop SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kelly Olynyk PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kelly Oubre Jr. SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kemba Walker PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kenneth Faried PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kenrich Williams SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kent Bazemore SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kentavious Caldwell-Pope SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kevin Durant SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kevin Huerter SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kevin Knox SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kevin Love PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kevon Looney C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Khem Birch C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Khris Middleton SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Khyri Thomas SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Klay Thompson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kobi Simmons G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kosta Koufos C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kostas Antetokounmpo PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kris Dunn PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyle Anderson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyle Korver SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyle Kuzma PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyle Lowry PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyle O&amp;\#x27;Quinn C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Kyrie Irving PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;LaMarcus Aldridge C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lance Stephenson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lance Thomas SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Landry Shamet PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Langston Galloway SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Larry Nance Jr. PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lauri Markkanen PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;LeBron James SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lonnie Walker IV SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lonzo Ball PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Lou Williams SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Luka Doncic SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Luke Kennard SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Luke Kornet PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Luol Deng SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Malcolm Brogdon PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Malcolm Miller SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Malik Beasley SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Malik Monk SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marc Gasol C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marco Belinelli SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marcus Morris PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marcus Smart PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mario Hezonja SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Markieff Morris PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marquese Chriss PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;MarShon Brooks G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marvin Bagley III PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Marvin Williams PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mason Plumlee PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Matthew Dellavedova PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Maurice Harkless SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Maxi Kleber PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Melvin Frazier Jr. SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Meyers Leonard PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Michael Beasley F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Michael Carter-Williams PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Michael Kidd-Gilchrist SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mikal Bridges SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mike Conley PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mike Muscala PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mike Scott PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Miles Bridges SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Miles Plumlee C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mitchell Creek SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Mitchell Robinson C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Monte Morris PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Montrezl Harrell PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Moritz Wagner C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Myles Turner C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nemanja Bjelica PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nene Hilario C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nerlens Noel PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nicolas Batum SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nik Stauskas SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nikola Jokic C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nikola Mirotic PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Nikola Vucevic C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Noah Vonleh PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Norman Powell SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Okaro White F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Omari Spellman PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Omri Casspi F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Otto Porter Jr. SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;P.J. Tucker SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Pascal Siakam PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Pat Connaughton SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Patrick Beverley PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Patrick McCaw SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Patty Mills PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Paul George SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Paul Millsap PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Quincy Acy F&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Quincy Pondexter SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Quinn Cook PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rajon Rondo PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Raul Neto PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rawle Alkins SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ray Spalding PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Raymond Felton PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Reggie Bullock SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Reggie Jackson PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Richaun Holmes PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ricky Rubio PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Robert Covington SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Robert Williams III C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Robin Lopez C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rodions Kurucs SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rodney Hood SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rodney McGruder SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ron Baker G *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rondae Hollis-Jefferson SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Royce O&amp;\#x27;Neale SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rudy Gay SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Rudy Gobert C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Russell Westbrook PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ryan Anderson PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ryan Arcidiacono PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Ryan Broekhoff SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Salah Mejri C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Sam Dekker SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Scott Machado PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Semi Ojeleye PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Serge Ibaka C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Seth Curry SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Shabazz Napier PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Shai Gilgeous-Alexander PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Shaquille Harrison PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Shaun Livingston PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Shelvin Mack PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Sindarius Thornwell SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Skal Labissiere PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Solomon Hill SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Spencer Dinwiddie PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Stanley Johnson SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Stephen Curry PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Sterling Brown SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Steven Adams C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Sviatoslav Mykhailiuk SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;T.J. Leaf PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;T.J. McConnell PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;T.J. Warren SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Taj Gibson PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Taurean Prince SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Terrance Ferguson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Terrence Ross SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Terry Rozier PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Thabo Sefolosha SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Thaddeus Young PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Theo Pinson SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Thomas Bryant C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Thon Maker PF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tim Frazier PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tim Hardaway Jr. SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Timothe Luwawu-Cabarrot SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tobias Harris SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tomas Satoransky SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tony Parker PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tony Snell SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Torrey Craig SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Trae Young PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Treveon Graham SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Trevor Ariza SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Trey Burke PG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Trey Lyles PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tristan Thompson C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Troy Brown Jr. SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Troy Daniels SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Troy Williams SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyler Dorsey SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyler Johnson SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyler Ulis G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyler Zeller C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyreke Evans G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyrone Wallace SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyson Chandler C *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Tyus Jones PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Udonis Haslem PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Vince Carter SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Walt Lemon Jr. PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wayne Ellington SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wayne Selden SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wendell Carter Jr. C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wes Iwundu SF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wesley Johnson SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wesley Matthews SG *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Will Barton SG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Willie Cauley-Stein C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Willy Hernangomez C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Wilson Chandler SF *&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Yante Maten PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Yogi Ferrell PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Yuta Watanabe G&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Zach Collins PF&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Zach LaVine PG&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Zaza Pachulia C&quot;' />
+                  <groupfilter function='member' level='[none:Name:nk]' member='&quot;Zhaire Smith SG&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' direction='DESC' using='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:PointsPerGame:qk]' />
+          <slices>
+            <column>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]</column>
+            <column>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:PointsPerGame:qk]</rows>
+        <cols>([federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok] / ([federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk] / [federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:TeamName (STAT):nk]))</cols>
+      </table>
+      <simple-id uuid='{E2E0FCD9-D503-41AB-814B-2132BEBA5864}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:TeamStadium:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[sum:Capacity:ok]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AACC5E37-1086-4FED-864F-240A150F51FA}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FE9CF46A-D6C4-4CDB-9922-3236091A2256}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{51960C49-428D-4227-91F7-A8982D0A1F40}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]' type='filter' />
+            <card param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:Name:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.16w2n970hfl1hc18k9qnl1ibmwhn].[none:ID (STAT):ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3E7DAE37-3D3E-4F7B-AE39-210CE85D0794}' />
+    </window>
+  </windows>
+</workbook>

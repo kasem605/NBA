@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D1C7EBB-355B-4C82-B8C6-DC21ABC32EC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NBA.Biz</RootNamespace>
+    <AssemblyName>NBA.Biz</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessRulesExtensions.cs" />
+    <Compile Include="DepthChartBiz.cs" />
+    <Compile Include="IDepthChartBiz.cs" />
+    <Compile Include="INBAStandingBiz.cs" />
+    <Compile Include="IPlayerBiz.cs" />
+    <Compile Include="IStatBiz.cs" />
+    <Compile Include="NBAStandingBiz.cs" />
+    <Compile Include="PlayerBiz.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatBiz.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NBA.Dal\NBA.DAL.csproj">
+      <Project>{878613cc-6e7f-4bb1-ae08-4050585e46cd}</Project>
+      <Name>NBA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBA.Model\NBA.Model.csproj">
+      <Project>{3216b5ab-9211-41ea-8570-53b032bb0bf4}</Project>
+      <Name>NBA.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBA.Utility\NBA.Utility.csproj">
+      <Project>{b7231013-6319-4306-87d7-7ee5745e7e86}</Project>
+      <Name>NBA.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
