@@ -8,7 +8,7 @@
             W = Integer_NULLValue;
             L = Integer_NULLValue;
             PCT = Float_NULLValue;
-            GB = Integer_NULLValue;
+            GB = Float_NULLValue;
             Home = String_NULLValue;
             Away = String_NULLValue;
             DIV = String_NULLValue;
@@ -28,7 +28,7 @@
 
         public double PCT;
 
-        public int GB;
+        public float GB;
 
         public string Home;
 

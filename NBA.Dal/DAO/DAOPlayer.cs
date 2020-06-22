@@ -17,6 +17,7 @@ namespace NBA.Dal.DAO
     {
         public IDbDataParameter[] CreateParameters(Player s)
         {
+
             IDbDataParameter[] parameters = {
                         new SqlParameter("@playerFName", SqlDbType.NVarChar, 100),
                         new SqlParameter("@playerMName", SqlDbType.NVarChar, 100), // player.MName;
@@ -25,23 +26,23 @@ namespace NBA.Dal.DAO
                         new SqlParameter("@Position", SqlDbType.NChar, 2),
                         new SqlParameter("@Age", SqlDbType.Int, 8),
                         new SqlParameter("@Weight", SqlDbType.Int, 8),
-                        new SqlParameter("@Height", SqlDbType.VarChar, 10),
-                        new SqlParameter("@College", SqlDbType.VarChar, 250),
+                        new SqlParameter("@Height", SqlDbType.NVarChar, 10),
+                        new SqlParameter("@College", SqlDbType.NVarChar, 250),
                         new SqlParameter("@Salary", SqlDbType.Decimal, 18),
-                        new SqlParameter("@TeamName", SqlDbType.VarChar, 250)
+                        new SqlParameter("@TeamName", SqlDbType.NVarChar, 250)
                     };
 
-            parameters[0].Value = s.FName;
-            parameters[1].Value = Extensions.CheckNULLS(s.MName);
-            parameters[2].Value = s.LName;
-            parameters[3].Value = s.JerseyNumber;
-            parameters[4].Value = s.Pos;
-            parameters[5].Value = Int32.Parse(s.Age);
-            parameters[6].Value = Int32.Parse(s.Weight);
-            parameters[7].Value = s.Height;
-            parameters[8].Value = s.College;
-            parameters[9].Value = s.Salary;
-            parameters[10].Value = s.TeamName;
+            parameters[0].Value = s.FName.CheckNULLS();
+            parameters[1].Value = s.MName.CheckNULLS();
+            parameters[2].Value = s.LName.CheckNULLS();
+            parameters[3].Value = s.JerseyNumber.CheckNULLS();
+            parameters[4].Value = s.Pos.CheckNULLS();
+            parameters[5].Value = s.Age.ToString().CheckIntegerNULLS();
+            parameters[6].Value = s.Weight.CheckIntegerNULLS();
+            parameters[7].Value = s.Height.CheckNULLS();
+            parameters[8].Value = s.College.CheckNULLS();
+            parameters[9].Value = s.Salary.CheckNULLS();
+            parameters[10].Value = s.TeamName.CheckNULLS();
 
             return parameters;
         }
@@ -49,7 +50,7 @@ namespace NBA.Dal.DAO
         public bool InsertPlayersData(List<Player> players)
         {
             bool returnState = false;
-            string storeProc = "InsertPlayer";
+            string storeProc = "sp_InsertPlayer";
             IDbConnection sqlConn = null;
             IDbCommand sqlCmd = null;
             IDbDataParameter[] parameters = null;

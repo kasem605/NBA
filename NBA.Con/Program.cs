@@ -21,7 +21,7 @@ namespace NBA.Con
     {
         static void Main(string[] args)
         {
-            #region Scrape data for player Roster (Done)
+
 
             string homeURL = "http://www.espn.com";
             string URLString = "http://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks";
@@ -32,6 +32,8 @@ namespace NBA.Con
             bool returnState = false;
 
             URLScraper us = new URLScraper();
+
+            #region Scrape data for player Roster (Done)
 
             us.URLString = URLString;
             us.XPath = xPath;
@@ -44,7 +46,7 @@ namespace NBA.Con
                 Console.WriteLine("    Getting data for {0} ...", url.TeamName);
                 us.TeamName = url.TeamName;
                 us.URLString = string.Concat(homeURL, url.TeamURL);
-                us.XPath = "//*[@class='Table2__tbody']/tr";
+                us.XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section/div[2]/section/div[2]/div/div[2]/table/tbody/tr";
                 List<Player> players = us.GetTeamData();
                 IPlayer pDAO = new DAOPlayer();
                 PlayerBiz pbiz = new PlayerBiz(pDAO);
@@ -57,8 +59,7 @@ namespace NBA.Con
             #region NBA Standings (Done)
 
             URLString = "http://www.espn.com/nba/standings/_/group/league";
-            xPath = "//*[@class='Table2__tr Table2__tr--sm Table2__even']";
-
+            xPath = "//*[@id='fittPageContainer']/div[3]/div[1]/div/section/div/section/div[2]/div/section/div[1]/section/div[2]/table/tbody";
             us.XPath = xPath;
             us.URLString = URLString;
 
@@ -75,14 +76,14 @@ namespace NBA.Con
             #region STAT  (Done)
 
             URLString = "http://www.espn.com/nba/team/stats/_/name/lac";
-            xPath = "//*[@class='Table2__tbody']";
+            xPath = "//*[@class='dropdown__select']";
 
             us.XPath = xPath;
             us.URLString = URLString;
 
-            List<TeamUrl> urlst = us.GetURLs();
+            List<TeamUrl> urlst = us.GetURLsForStats();
 
-            List<TeamUrl> url30 = urlst.GetRange(0, 30);
+            List<TeamUrl> url30 = urlst.GetRange(0, 29);
 
             WriteLine("Getting Team Stats ...");
 
@@ -91,6 +92,7 @@ namespace NBA.Con
                 Console.WriteLine("    Getting stats for {0} ...", url.TeamName);
 
                 us.URLString = string.Concat(homeURL, url.TeamURL);
+                us.XPath = "//*[@class='flex']";
 
                 List<Stat> stats = us.GetStats(url.TeamName);
 
@@ -108,16 +110,20 @@ namespace NBA.Con
             homeURL = "http://www.espn.com";
             URLString = "http://www.espn.com/nba/team/depth/_/name/lac/la-clippers";
 
-            xPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/article/div/section/div[2]/div/section/table/tbody/tr/td[2]/div/div/div[2]/table/tbody/tr/td/div/table/tbody/tr";
 
             string team = string.Empty;
 
+            xPath = "//*[@class='dropdown__select']";
             us.XPath = xPath;
             us.URLString = URLString;
 
             List<TeamUrl> urlt = us.GetURLs();
 
+            xPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/article/div/section/div[2]/div/section/table/tbody/tr/td[2]/div/div/div[2]/table/tbody/tr/td/div/table/tbody";
+            us.XPath = xPath;
+
             WriteLine("Getting Depth Chart ...");
+
             foreach (TeamUrl url in urlt)
             {
                 team = url.TeamName;

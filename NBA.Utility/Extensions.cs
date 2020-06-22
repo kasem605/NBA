@@ -29,6 +29,45 @@ namespace NBA.Utility
             return field;
         }
 
+        public static int CheckIntegerNULLS(this string field)
+        {
+            int integerField = 0;
+
+            if (!(string.IsNullOrEmpty(field) || string.IsNullOrWhiteSpace(field)))
+            {
+                integerField = Int32.Parse(field);
+            }
+            return integerField; 
+        }
+
+        public static double CheckDoubleNULLS(this string field)
+        {
+            double doubleField = 0;
+
+            field = field.Replace("-", "");
+
+            if (!(string.IsNullOrEmpty(field) || string.IsNullOrWhiteSpace(field)))
+            {
+                doubleField = double.Parse(field);
+            }
+
+            return doubleField;
+        }
+
+        public static float CheckFloatNULLS(this string field)
+        {
+            float floatField = 0;
+
+            field = field.Replace("-", "");
+
+            if (!(string.IsNullOrEmpty(field) || string.IsNullOrWhiteSpace(field)))
+            {
+                floatField = float.Parse(field);
+            }
+
+            return floatField;
+        }
+
         public static string ExtractWin(this string home)
         {
             string win = home;

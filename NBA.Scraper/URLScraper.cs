@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using NBA.Model;
-using System.Web;
 using NBA.Utility;
+using System.Collections.Generic;
+using System.Web;
 
 
 namespace NBA.Scraper
@@ -24,6 +20,10 @@ namespace NBA.Scraper
         {
         }
 
+        /// <summary>
+        /// Creates an URL list of the existing teams in the NBA by acrpping the URL's from the drop down on a team's web page
+        /// </summary>
+        /// <returns></returns>
         public List<TeamUrl> GetURLs()
         {
             List<TeamUrl> urls = new List<TeamUrl>();
@@ -36,12 +36,45 @@ namespace NBA.Scraper
 
             foreach(HtmlNode option in options)
             {
-                if (!string.IsNullOrWhiteSpace(option.InnerText) && !option.InnerText.Equals("More NBA teams"))
+                if (!string.IsNullOrWhiteSpace(option.InnerText) && !option.InnerText.ToUpper().Equals("MORE NBA TEAMS"))
                 {
                     TeamUrl tu = new TeamUrl();
                     tu.ID = ++count;
                     tu.TeamName = option.InnerText;
                     tu.TeamURL = option.Attributes["data-url"].Value;
+                    tu.Description = option.InnerText;
+
+                    urls.Add(tu);
+                }
+            }
+
+            return urls;
+        }
+
+        /// <summary>
+        /// creates a list of the team URLs prepending the associated url path
+        /// </summary>
+        /// <returns>generic list of teamURL</returns>
+        public List<TeamUrl> GetURLsForStats()
+        {
+            string rootURL = @"/nba/team/stats/_/name/";
+
+            List<TeamUrl> urls = new List<TeamUrl>();
+
+            doc = GetDocument(URLString);
+
+            HtmlNode urlNode = doc.DocumentNode.SelectSingleNode(XPath);
+
+            HtmlNodeCollection options = urlNode.SelectNodes("//option");
+
+            foreach (HtmlNode option in options)
+            {
+                if (!string.IsNullOrWhiteSpace(option.InnerText) && !option.InnerText.ToUpper().Equals("MORE NBA TEAMS"))
+                {
+                    TeamUrl tu = new TeamUrl();
+                    tu.ID = ++count;
+                    tu.TeamName = option.InnerText;
+                    tu.TeamURL = string.Concat(rootURL,option.Attributes["data-param-value"].Value.ToString());
                     tu.Description = option.InnerText;
 
                     urls.Add(tu);
@@ -116,92 +149,103 @@ namespace NBA.Scraper
             List<Stat> stats = new List<Stat>();
 
             doc = GetDocument(URLString);
-            HtmlNodeCollection divs = doc.DocumentNode.SelectNodes(XPath);
 
-            for (int i = 0; i < divs.Count; i++)
+            this.XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section[1]/div[2]/table";
+            HtmlNode  playerTable = doc.DocumentNode.SelectSingleNode(XPath);
+
+            HtmlDocument playerDoc = new HtmlDocument();
+            playerDoc.LoadHtml(playerTable.InnerHtml);
+
+            HtmlNodeCollection trRows = playerDoc.DocumentNode.SelectNodes("//tr/td");
+
+            for (int i = 0; i < trRows.Count; i++)
             {
-                HtmlDocument hDoc = new HtmlDocument();
-                hDoc.LoadHtml(divs[i].InnerHtml);
-
-                if (i == 0)
+                if (!trRows[i].InnerText.ToLower().Equals("total"))
                 {
-                    HtmlNodeCollection rows = hDoc.DocumentNode.SelectNodes("//tr");
-
-                    foreach (HtmlNode row in rows)
-                    {
-                        HtmlDocument tdDoc = new HtmlDocument();
-                        tdDoc.LoadHtml(row.InnerHtml);
-
-                        HtmlNodeCollection cols = tdDoc.DocumentNode.SelectNodes("//td");
-
-                        for (int j = 0; j < cols.Count; j++)
-                        {
-                            Stat s = new Stat();
-                            s.Name = cols[j].InnerText;
-                            s.TeamName = teamName;
-                            if (s.Name.Contains("*"))
-                                s.MidseasonTrades = true;
-                            stats.Add(s);
-                        }
-
-                    }
+                    Stat s = new Stat();
+                    s.Name = trRows[i].InnerText;
+                    s.TeamName = teamName;
+                    if (s.Name.Contains("*"))
+                        s.MidseasonTrades = true;
+                    stats.Add(s);
                 }
-                else if (i == 1)
+            }
+
+
+            XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section[1]/div[2]/div/div[2]/table";
+            HtmlNode playerTable2 = doc.DocumentNode.SelectSingleNode(XPath);
+
+            HtmlDocument playerDoc2 = new HtmlDocument();
+            playerDoc2.LoadHtml(playerTable2.InnerHtml);
+
+            HtmlNodeCollection trRows2 = playerDoc2.DocumentNode.SelectNodes("//tr");
+
+            int j = 0;
+
+
+            for (int i = 0; i < trRows2.Count-1;i++)
+            {
+                HtmlDocument playerDoc3 = new HtmlDocument();
+                playerDoc3.LoadHtml(trRows2[i].InnerHtml);
+
+                HtmlNodeCollection tdRows = playerDoc3.DocumentNode.SelectNodes("//td");
+
+                if (tdRows != null)
                 {
-                    HtmlNodeCollection rows = hDoc.DocumentNode.SelectNodes("//tr");
-
-                    for (int u = 0; u < rows.Count; u++)
-                    {
-                        HtmlDocument tdDoc = new HtmlDocument();
-                        tdDoc.LoadHtml(rows[u].InnerHtml);
-
-                        HtmlNodeCollection cols = tdDoc.DocumentNode.SelectNodes("//td");
-
-                            stats[u].GamesPlayed = cols[0].InnerText;            //1
-                            stats[u].GamesStarted = cols[1].InnerText;           //2
-                            stats[u].MinutesPerGame = cols[2].InnerText;         //3
-                            stats[u].PointsPerGame = cols[3].InnerText;          //4
-                            stats[u].OffensiveReboundsPerGame = cols[4].InnerText;//5
-                            stats[u].DefensiveReboundsPerGame = cols[5].InnerText;//6
-                            stats[u].ReboundsPerGame = cols[6].InnerText;        //7
-                            stats[u].AssistsPerGame = cols[7].InnerText;         //8
-                            stats[u].StealsPerGame = cols[8].InnerText;          //9
-                            stats[u].BlocksPerGame = cols[9].InnerText;          //10
-                            stats[u].TurnOversPerGame = cols[10].InnerText;      //11
-                            stats[u].FoulsPerGame = cols[11].InnerText;          //12
-                            stats[u].AssistToTurnoverRatio = cols[12].InnerText; //13
-                            stats[u].PlayerEfficiencyRating = cols[13].InnerText;//14
-
-                    }
+                    stats[j].GamesPlayed = tdRows[0].InnerText;            //1
+                    stats[j].GamesStarted = tdRows[1].InnerText;           //2
+                    stats[j].MinutesPerGame = tdRows[2].InnerText;         //3
+                    stats[j].PointsPerGame = tdRows[3].InnerText;          //4
+                    stats[j].OffensiveReboundsPerGame = tdRows[4].InnerText;//5
+                    stats[j].DefensiveReboundsPerGame = tdRows[5].InnerText;//6
+                    stats[j].ReboundsPerGame = tdRows[6].InnerText;        //7
+                    stats[j].AssistsPerGame = tdRows[7].InnerText;         //8
+                    stats[j].StealsPerGame = tdRows[8].InnerText;          //9
+                    stats[j].BlocksPerGame = tdRows[9].InnerText;          //10
+                    stats[j].TurnOversPerGame = tdRows[10].InnerText;      //11
+                    stats[j].FoulsPerGame = tdRows[11].InnerText;          //12
+                    stats[j].AssistToTurnoverRatio = tdRows[12].InnerText; //13
+                    stats[j].PlayerEfficiencyRating = tdRows[13].InnerText;//14
+                    j++;
                 }
-                else if (i == 3)
+
+            }
+
+
+            XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section[2]/div[2]/div/div[2]/table/tbody";
+            HtmlNode playerTable3 = doc.DocumentNode.SelectSingleNode(XPath);
+
+            HtmlDocument playerDoc4 = new HtmlDocument();
+            playerDoc4.LoadHtml(playerTable3.InnerHtml);
+
+            HtmlNodeCollection trRows3 = playerDoc4.DocumentNode.SelectNodes("//tr");
+
+            int u = 0;
+
+            for (int v = 0; v < trRows3.Count-1; v++)
+            {
+                HtmlDocument tdDoc = new HtmlDocument();
+                tdDoc.LoadHtml(trRows3[v].InnerHtml);
+
+                HtmlNodeCollection tdNodes = tdDoc.DocumentNode.SelectNodes("//td");
+                if (tdNodes != null)
                 {
-                    HtmlNodeCollection rows = hDoc.DocumentNode.SelectNodes("//tr");
+                    stats[u].AverageFieldGoalsMade = tdNodes[0].InnerText;              //1
+                    stats[u].AverageFieldGoalsAttempted = tdNodes[1].InnerText;         //2
+                    stats[u].FieldGoalPercentage = tdNodes[2].InnerText;                //3
+                    stats[u].Average3PointFieldGoalsMade = tdNodes[3].InnerText;        //4
+                    stats[u].Average3PointFieldGoalsAttempted = tdNodes[4].InnerText;   //5
+                    stats[u].ThreePointFieldGoalPercentage = tdNodes[5].InnerText;      //6
+                    stats[u].AverageFreeThrowsMade = tdNodes[6].InnerText;              //7
+                    stats[u].AverageFreeThrowsAttempted = tdNodes[7].InnerText;         //8
+                    stats[u].FreeThrowPercentage = tdNodes[8].InnerText;                //9
+                    stats[u].TwoPointFieldGoalsMadePerGame = tdNodes[9].InnerText;      //10
+                    stats[u].TwoPointFieldGoalsAttemptedPerGame = tdNodes[10].InnerText;//11
+                    stats[u].TwoPointFieldGoalPercentage = tdNodes[11].InnerText;       //12
+                    stats[u].ScoringEfficiency = tdNodes[12].InnerText;                 //13
+                    stats[u].ShootingEfficiency = tdNodes[13].InnerText;                //14
 
-                    for (int v = 0; v < rows.Count; v++)
-                    {
-                        HtmlDocument tdDoc = new HtmlDocument();
-                        tdDoc.LoadHtml(rows[v].InnerHtml);
-
-                        HtmlNodeCollection tdNodes = tdDoc.DocumentNode.SelectNodes("//td");
-
-                        stats[v].AverageFieldGoalsMade = tdNodes[0].InnerText;              //1
-                        stats[v].AverageFieldGoalsAttempted = tdNodes[1].InnerText;         //2
-                        stats[v].FieldGoalPercentage = tdNodes[2].InnerText;                //3
-                        stats[v].Average3PointFieldGoalsMade = tdNodes[3].InnerText;        //4
-                        stats[v].Average3PointFieldGoalsAttempted = tdNodes[4].InnerText;   //5
-                        stats[v].ThreePointFieldGoalPercentage = tdNodes[5].InnerText;      //6
-                        stats[v].AverageFreeThrowsMade = tdNodes[6].InnerText;              //7
-                        stats[v].AverageFreeThrowsAttempted = tdNodes[7].InnerText;         //8
-                        stats[v].FreeThrowPercentage = tdNodes[8].InnerText;                //9
-                        stats[v].TwoPointFieldGoalsMadePerGame = tdNodes[9].InnerText;      //10
-                        stats[v].TwoPointFieldGoalsAttemptedPerGame = tdNodes[10].InnerText;//11
-                        stats[v].TwoPointFieldGoalPercentage = tdNodes[11].InnerText;       //12
-                        stats[v].ScoringEfficiency = tdNodes[12].InnerText;                 //13
-                        stats[v].ShootingEfficiency = tdNodes[13].InnerText;                //14
-
-
-                    }
+                    u++;
                 }
             }
 
@@ -224,17 +268,17 @@ namespace NBA.Scraper
             HtmlNode dataNode = doc.DocumentNode.SelectSingleNode(XPath);
 
 
-            for (int i = 4; i < 30; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 HtmlNodeCollection data = dataNode.SelectNodes(string.Concat("//tr[", i,"]/td"));
 
                 NBAStanding ns = new NBAStanding();
 
                 ns.TeamName = data[0].InnerText;
-                ns.W = int.Parse(data[1].InnerText);
-                ns.L = int.Parse(data[2].InnerText);
-                ns.PCT = double.Parse(data[3].InnerText);
-                ns.GB = int.Parse(data[4].InnerText);
+                ns.W = data[1].InnerText.CheckIntegerNULLS();
+                ns.L = data[2].InnerText.CheckIntegerNULLS();
+                ns.PCT = data[3].InnerText.CheckDoubleNULLS();
+                ns.GB = data[4].InnerText.CheckFloatNULLS();
 
                 ns.Home = data[5].InnerText;
                 ns.HomeWin = Extensions.ExtractWin(ns.Home);
@@ -271,34 +315,53 @@ namespace NBA.Scraper
 
             HtmlDocument doc = GetDocument(URLString);
 
-            HtmlNodeCollection rows = doc.DocumentNode.SelectNodes(XPath);
+            this.XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section/div[2]/div[1]/section/div[2]/table";
+            HtmlNode dcTable = doc.DocumentNode.SelectSingleNode(XPath);
 
-            int rowCount = 0;
+            HtmlDocument dcDoc = new HtmlDocument();
+            dcDoc.LoadHtml(dcTable.InnerHtml);
 
-            foreach (HtmlNode row in rows)
+            HtmlNodeCollection trRows = dcDoc.DocumentNode.SelectNodes("//tr");
+
+            for (int i = 0; i < trRows.Count; i++)
             {
-                ++rowCount;
-
-                HtmlDocument hDoc = new HtmlDocument();
-                hDoc.LoadHtml(row.InnerHtml);
-                HtmlNodeCollection cols = hDoc.DocumentNode.SelectNodes("//td/span");
-
-                int colCount = 0;
-                foreach (HtmlNode col in cols)
+                if (!string.IsNullOrEmpty(trRows[i].InnerText))
                 {
-                    ++colCount;
-
-                    if (!col.InnerText.Contains("- ") && !string.IsNullOrEmpty(col.InnerText))
-                    {
-                        DepthChart dc = new DepthChart();
-                        dc.PlayerName = col.InnerText;
-                        dc.TeamName = team;
-                        dc.Position = GetPosition(rowCount);
-                        dc.Depth = GetDepth(colCount);
-
-                        dcList.Add(dc);
-                    }
+                    DepthChart dc = new DepthChart();
+                    dc.TeamName = team;
+                    dc.Position = trRows[i].InnerText;
+                    dcList.Add(dc);
                 }
+            }
+
+            XPath = "//*[@id='fittPageContainer']/div[2]/div[5]/div[1]/div/section/div/section/div[2]/div[1]/section/div[2]/div/div[2]/table";
+            HtmlNode tableNode = doc.DocumentNode.SelectSingleNode(XPath);
+
+            HtmlDocument dcDoc2 = new HtmlDocument();
+            dcDoc2.LoadHtml(tableNode.InnerHtml);
+
+            HtmlNodeCollection dcTrRows = dcDoc2.DocumentNode.SelectNodes("//tr");
+
+            int j = 0;
+
+            for (int i = 0; i < dcTrRows.Count; i++)
+            {
+                HtmlDocument dcDoc3 = new HtmlDocument();
+                dcDoc3.LoadHtml(dcTrRows[i].InnerHtml);
+
+                HtmlNodeCollection tdRows = dcDoc3.DocumentNode.SelectNodes("//td");
+
+                if (tdRows != null)
+                {
+                    dcList[j].Starter = tdRows[0].InnerText;   //1
+                    dcList[j].Second = tdRows[1].InnerText;   //2
+                    dcList[j].Third = tdRows[2].InnerText;   //3
+                    dcList[j].Fourth = tdRows[3].InnerText;   //4
+                    dcList[j].Fifth = tdRows[4].InnerText;   //5
+
+                    j++;
+                }
+
             }
 
             return dcList;

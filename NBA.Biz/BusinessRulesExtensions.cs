@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NBA.Biz
 {
-    public static class BusinessRulesExtensions
+    public static class BusinessRulesExtensions 
     {
         public static string[] ExtractNames(this string names)
         {

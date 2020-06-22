@@ -86,7 +86,7 @@ namespace NBA.Dal.DAO
 
         public bool InsertStatData(List<Stat> stats)
         {
-            string storeProc = "InsertStat";
+            string storeProc = "sp_InsertStat";
             List<bool> insertList = null;
 
             IDbConnection sqlConn = null;

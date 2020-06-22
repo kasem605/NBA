@@ -17,16 +17,22 @@ namespace NBA.Dal.DAO
         {
             IDbDataParameter[] parameters =
             {
-                new SqlParameter( "@PlayerName", SqlDbType.NVarChar, 150),
                 new SqlParameter( "@teamName", SqlDbType.NVarChar, 150),
                 new SqlParameter( "@Position", SqlDbType.NVarChar, 10),
-                new SqlParameter( "@Depth", SqlDbType.NVarChar, 10)
+                new SqlParameter( "@Starter", SqlDbType.NVarChar, 10),
+                new SqlParameter( "@2nd", SqlDbType.NVarChar, 10),
+                new SqlParameter( "@3rd", SqlDbType.NVarChar, 10),
+                new SqlParameter( "@4th", SqlDbType.NVarChar, 10),
+                new SqlParameter( "@5th", SqlDbType.NVarChar, 10)
             };
 
-            parameters[0].Value = s.PlayerName;
-            parameters[1].Value = s.TeamName;
-            parameters[2].Value = s.Position;
-            parameters[3].Value = s.Depth;
+            parameters[0].Value = s.TeamName;
+            parameters[1].Value = s.Position;
+            parameters[2].Value = s.Starter;
+            parameters[3].Value = s.Second;
+            parameters[4].Value = s.Third;
+            parameters[5].Value = s.Fourth;
+            parameters[6].Value = s.Fifth;
             return parameters;
         }
 
@@ -34,7 +40,7 @@ namespace NBA.Dal.DAO
         {
             List<bool> insertList = null;
 
-            string storeProc = "InsertDepthChart";
+            string storeProc = "sp_InsertDepthChart";
 
             IDbConnection sqlConn = null;
             IDbCommand sqlCmd = null;

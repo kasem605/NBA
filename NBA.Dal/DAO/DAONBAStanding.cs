@@ -12,7 +12,7 @@ namespace NBA.Dal.DAO
     {
         public bool InsertNBAStandings(IEnumerable<NBAStanding> standings)
         {
-            string storeProc = "InsertNBAStanding";
+            string storeProc = "sp_InsertNBAStanding";
             List<bool> insertList = null;
 
             IDbConnection sqlConn = null;
